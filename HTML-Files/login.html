@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <header class="header">
         <a class="logo" href="#">
@@ -17,7 +19,7 @@
         <nav class="headbar">
             <a href="index.html">Hmme</a>
             <a href="login.html">Login</a>
-            <a href="#doctor">Doctor</a>
+            <a href="doctor.html">Doctor</a>
             <a href="#medicine">Medicine</a>
             <a href="#service">Service</a>
             <a href="#contact">Contact</a>
@@ -29,7 +31,8 @@
     <!-- form vaidation -->
 
     <div class="container" id="container">
-        <div class="form sign-up-container"></div>
+        <!-- sign up options -->
+        <div class="form sign-up-container">
             <form action="#">
                 <h1>Create An Accout</h1>
                 <div class="social-container">
@@ -57,14 +60,15 @@
                     <i class="fa fa-lock"></i>
                     <input type="password" placeholder="Password">
                 </div>
-                
+
                 <button>Sign Up</button>
             </form>
+        </div>
 
-            <!-- sign in options -->
-            <div class="form sign-in-container"></div>
+        <!-- sign in options -->
+        <div class="form sign-in-container">
             <form action="#">
-                <h1>LogIn</h1>
+                <h1>Login</h1>
                 <div class="social-container">
                     <a href="#" class="social">
                         <i class="fa fa-facebook-official" aria-hidden="true"></i>
@@ -82,7 +86,7 @@
                     <i class="fa fa-user"></i>
                     <input type="text" placeholder="Username">
                 </div>
-                
+
                 <div class="input-field">
                     <i class="fa fa-lock"></i>
                     <input type="password" placeholder="Password">
@@ -91,7 +95,40 @@
                 <button>Sign In</button>
             </form>
         </div>
-        </div>        
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <img src="../Images/s1.png" style="height: 25rem; width: 30rem; padding-top: 5%;">
+                    <button class="btn" id="signIn"> Sign in</button>
+                </div>
+
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello User!</h1>
+                    <p>Enter your details and start your journey with us</p>
+                    <img src="../Images/s3.png" style="height: 25rem; width: 30rem;">
+                    <button class="btn" id="signUp"> Sign up</button>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+        
+    </script>
 </body>
+
 </html>
